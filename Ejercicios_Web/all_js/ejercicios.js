@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     if(document.querySelector('#ej6')) {
         triangular();
-        // recargar();
+        recargar();
     }
     if(document.querySelector('#ej7')) {
         triangular2();
-        // recargar();
+        recargar();
     }
     if(document.querySelector("#ej8")) {
         arbol();
@@ -405,7 +405,9 @@ function triangular() {
     formulario.addEventListener('submit', e => {
 
         e.preventDefault();
-    
+         
+        var arrayPiramide = [];
+
         function piramide(numPisos) {
             for (let i = 0; i < numPisos; i++) {
               let piso = '';
@@ -416,11 +418,34 @@ function triangular() {
               for (let j = 0; j < i + 1; j++) {
                 piso = piso + '*';
               }
-              console.log(piso);
+              arrayPiramide[i] = piso;
             }
           }
-          
           piramide(5);
+
+          //Iteramos sobre cada elemento del arreglo, una vez hecho creamos el elemento y le añadimos el valor del arreglo en la posicion que iteramos y una clase para darle estilos a todos los triangulos
+          arrayPiramide.forEach(piso => {
+              const div = document.querySelector('.insert');
+              const h2 = document.createElement('h2');   
+              h2.textContent = piso;
+              h2.classList.add('triangulo-1');
+              div.appendChild(h2);
+              console.log(piso);
+          });
+        
+        
+        //Boton de recargar pagina  
+        const recargar = document.querySelector('#recargar');
+
+        const button = document.createElement("button");
+        button.classList.add('btn');
+        button.classList.add('btn-form');
+        button.classList.add('azul');
+        button.classList.add('recargar');
+        button.type = "submit";
+        button.textContent = "Nueva Consulta";
+
+        recargar.appendChild(button);
         
     })
 }
@@ -431,31 +456,62 @@ function triangular2() {
 
         e.preventDefault();
 
-        
+        var arrayPiramide = [];
     
         function piramide(numPisos) {
             for (let i = 0; i < numPisos; i++) {
               let piso = '';
           
-              for (let j = 0; j <= i + 1; j++) {
+              for (let j = 1; j <= i + 1; j++) {
                 piso = piso + '*';
               }
-              console.log(piso);
+              arrayPiramide[i] = piso; 
             }
           }
 
           function piramideInvertida(numPisos) {
-            for(let i = numPisos; i >= 1; i--) {
+            for(let k = numPisos; k >= 1; k--) {
               let piso = '';
-                for(let j = 1; j <= i; j++) {
+                for(let j = 1; j <= k; j++) {
                     piso = piso + '*';
                 }
-                console.log(piso);
+                arrayPiramide.push(piso);
             }
           }
-          
-          piramide(3);
+          piramide(4);
           piramideInvertida(3);
+
+          console.log(arrayPiramide);
+
+          //Iteramos sobre cada elemento del arreglo, una vez hecho creamos el elemento y le añadimos el valor del arreglo en la posicion que iteramos y una clase para darle estilos a todos los triangulos
+          arrayPiramide.forEach(e => {
+            const div = document.querySelector('.insert');
+            const h2 = document.createElement('h2');   
+            h2.textContent = e;
+            h2.classList.add('triangulo-1');
+            h2.classList.add('triangulo-2');
+            div.appendChild(h2);
+            
+            // console.log(piso);
+        });
+
+        console.log("En Ejecucion...");
+
+
+
+
+        //Boton de recargar pagina  
+        const recargar = document.querySelector('#recargar');
+
+        const button = document.createElement("button");
+        button.classList.add('btn');
+        button.classList.add('btn-form');
+        button.classList.add('azul');
+        button.classList.add('recargar');
+        button.type = "submit";
+        button.textContent = "Nueva Consulta";
+
+        recargar.appendChild(button);
         
     })
 }
@@ -469,28 +525,52 @@ function arbol() {
 
         const ciclos = document.querySelector('#ciclos').value;
 
-        console.log(ciclos);
+        // console.log(ciclos);
 
-        function imprimirPatron(ciclos) {
-            
+        var arrayArbol = [];
+
+        var arrayPiso = [];
+
+
+        function imprimirPatron() {
+
             for (let i = 1; i <= ciclos; i++) {
-              for (let j = 1; j <= i; j++) {
-                let linea = '';
-                for (let k = 0; k < j; k++) {
-                  linea += '*';
+                for (let j = 1; j <= i; j++) {
+                  let linea = '';
+                  for (let k = 0; k < j; k++) {
+                    linea += '*';
+                  }
+                  arrayArbol.push(linea);
+                  console.log(linea);
                 }
-                console.log(linea);
               }
             }
-          }
+
+            imprimirPatron(ciclos);
+
+          //Iteramos sobre cada elemento del arreglo, una vez hecho creamos el elemento y le añadimos el valor del arreglo en la posicion que iteramos y una clase para darle estilos a todos los triangulos
+          arrayArbol.forEach(piso => {
+            const div = document.querySelector('.insert');
+            const p = document.createElement('p');   
+            p.textContent = piso;
+            p.classList.add('triangulo-1');
+            p.classList.add('triangulo-2');
+            p.classList.add('triangulo-3');
+            div.appendChild(p);
+            console.log(piso);
+        });
+            
+
+          console.log(arrayArbol);
           
-          imprimirPatron(ciclos);
+          
 
         const recargar = document.querySelector('#recargar');
 
         const button = document.createElement("button");
         button.classList.add('btn');
         button.classList.add('btn-form');
+        button.classList.add('azul');
         button.classList.add('recargar');
         button.type = "submit";
         button.textContent = "Nueva Consulta";

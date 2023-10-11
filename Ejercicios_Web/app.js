@@ -26,11 +26,11 @@ function navegacionFijaInicio() {
             bar.classList.add('header');
             bar.classList.add('fijo');
             body.classList.add('body-scroll-inicio');
-            encabezado.remove();
+            encabezado.remove();    
         } else {
             bar.classList.remove('fijo');
             body.classList.remove('body-scroll-inicio');
-            bar.classList.add('inicio');
+            bar.classList.add('inicio');            
         }
     });
 
