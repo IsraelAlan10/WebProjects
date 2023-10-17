@@ -95,10 +95,10 @@ function calcularSueldo() {
         // var extraTriple;
 
 
-        if(hora < 40) {
+        if(hora <= 40) {
             pagoSemanal = hora * pago;
-            // console.log(pagoSemanal);
-        }else if(41 <= hora <= 47 ) {
+            // console.log("Primer if");
+        }else if(hora >= 41 && hora <= 47 ) {
             extra = hora - 40;
             pagoExtra = (pago * 2) * extra;
             pagoSemanal = (40 * pago) + pagoExtra;
@@ -106,8 +106,11 @@ function calcularSueldo() {
         } else if(hora >= 48) {
             extra = hora - 47;
             pagoExtra = ((pago * 2) * 7) + ((pago * 3) * extra);
+            // console.log(pagoExtra);
             pagoSemanal = (40 * pago) + pagoExtra;
+            // console.log("Tercer if");
         }
+        console.log(hora);
 
         const resultado = document.getElementById('resultado');
         resultado.textContent = `Tu pago por tus ${hora} horas trabajadas es de ${pagoSemanal}`;
@@ -221,7 +224,7 @@ function agregarElementos() {
         e.preventDefault();
 
         //Padre
-        const formInterno = document.querySelector('.insert');
+        const formInterno = document.querySelector('.insert2');
         
         const label = document.createElement("label");
         label.classList.add('form-label');
@@ -308,7 +311,7 @@ function calcularCalificaciones() {
         //For para iterar sobre cada materia y calificacion
         for (var j = 0; j < materias.length; j++) {
 
-            const div = document.querySelector('.insert2');
+            const div = document.querySelector('.insert3');
             const comprobacion = document.querySelector('.gris');
 
             // if(comprobacion == null) {
@@ -326,7 +329,7 @@ function calcularCalificaciones() {
 
         if(calFinal < 6 ) {
 
-            const div = document.querySelector('.insert');
+            const div = document.querySelector('.insert2');
             
             
             const h3 = document.createElement("h3");
@@ -346,7 +349,7 @@ function calcularCalificaciones() {
             
         } else {
 
-            const div = document.querySelector('.insert');
+            const div = document.querySelector('.insert2');
 
             const h3 = document.createElement("h3");
             h3.classList.add('mensaje');
@@ -364,7 +367,7 @@ function calcularCalificaciones() {
         }   
         
         //Crear e inserta mensaje con calificacion final
-        const insert = document.querySelector('.insert');
+        const insert = document.querySelector('.insert2');
 
         const h3 = document.createElement("h3");
             h3.classList.add('resultado-txt');
