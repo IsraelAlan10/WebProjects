@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../normalize.css">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet">
+        <title>Ejercicios Prácticost</title>
+    </head>
+<body>
+
+    <header class="header">
+        <div class="container nav">
+            <div class="bar">
+                <a class="logo-a" href="../index.html">
+                    <img class="img-logo" src="../img/unam_og.png" alt="imagen-logo">
+                    <h1 class="logo">UNAM</h1>
+                </a>
+                <div class="navegacion">
+                    <a class="navegacion-enlace" href="../index.html">Inicio</a>
+                    <a class="navegacion-enlace" href="../ejercicios.html">Ejercicios</a>
+                    <a class="navegacion-enlace" href="../creditos.html">Creditos</a>
+                    <!-- <a class="navegacion-enlace" href="#"></a> -->
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <h3 class="head-form mr-top">Crecimiento de una planta</h3>
+    <div class="imagen5">
+        <img id="mainImage" class="image5" src="../img/planta1.jpg" alt="Imagen Principal">
+    </div>
+    
+    <p id="instrucciones" class="resultado no-margin">Para empezar pon el cursor sobre las diferentes etapas</p>
+    <p id="description" class="res-opacity resultado no-margin"></p>
+
+        <div class="flex container mar-bottom">
+            <div class="selectableText" onmouseover="highlightOption(1)" onmouseout="resetHighlight()">Etapa 1</div>
+            <div class="selectableText" onmouseover="highlightOption(2)" onmouseout="resetHighlight()">Etapa 2</div>
+            <div class="selectableText" onmouseover="highlightOption(3)" onmouseout="resetHighlight()">Etapa 3</div>
+            <div class="selectableText" onmouseover="highlightOption(4)" onmouseout="resetHighlight()">Etapa 4</div>
+            <div class="selectableText" onmouseover="highlightOption(5)" onmouseout="resetHighlight()">Etapa 5</div>
+        </div>
+
+        <script>
+            function highlightOption(option) {
+                // Puedes agregar aquí el código para cambiar la imagen y descripción
+
+                document.getElementById('mainImage').style.opacity = '1';
+                document.getElementById('description').style.opacity = '1';
+                document.getElementById('mainImage').style.transform = 'scale(1.1)';
+                switch(option) {
+                    case 1:
+                        document.getElementById('mainImage').src = '../img/planta1.jpg';
+                        document.getElementById('description').innerHTML = 'Germinación: La semilla absorbe agua y se hincha. Se rompe la cubierta y emerge una pequeña plántula...';
+                        break;
+                    case 2:
+                        document.getElementById('mainImage').src = '../img/planta2.jpg';
+                        document.getElementById('description').innerHTML = 'Desarrollo inicial: La plántula desarrolla raíces y hojas. Utiliza la luz solar para la fotosíntesis y crece...';
+                        break;
+                    case 3:
+                        document.getElementById('mainImage').src = '../img/planta3.jpg';
+                        document.getElementById('description').innerHTML = 'Madurez vegetativa: La planta se vuelve más grande y fuerte. Se forman ramas y más hojas. La planta está lista para reproducirse...';
+                        break;
+                    case 4:
+                        document.getElementById('mainImage').src = '../img/planta4.jpg';
+                        document.getElementById('description').innerHTML = 'Floración: La planta produce flores coloridas. Esto es crucial para la polinización y la formación de semillas...';
+                        break;
+                    case 5:
+                        document.getElementById('mainImage').src = '../img/planta5.jpg';
+                        document.getElementById('description').innerHTML = 'Producción de semillas: Las flores se convierten en frutos. Dentro de los frutos, se forman las semillas, listas para germinar y comenzar un nuevo ciclo...';
+                        break;
+                    default:
+                        document.getElementById('mainImage').src = '../img/planta1.jpg';
+                        
+                }
+            }
+
+            function resetHighlight() {
+                // Puedes agregar aquí el código para restaurar la imagen y descripción
+                // console.log('Resaltado restablecido');
+                document.getElementById('instrucciones').innerHTML = '';
+                document.getElementById('mainImage').style.opacity = '0';
+                document.getElementById('description').style.opacity = '0';
+                document.getElementById('mainImage').style.transform = 'scale(0)';
+            }
+        </script>
+    <footer class="footer">
+        <div class="container nav">
+            <div class="bar">
+                <a href="#">
+                    <h2 class="logo">FES ARAGÓN</h1>
+                </a>
+                
+                <div class="footer-txt">
+                    <p class="footer-text">Trabajo Práctico. Programación Web 2</p>
+                    <p class="footer-text">Alan Israel Montero Herrera</p>
+                </div>
+                <img class="img-logo-fes" src="../img/fes_aragon.png"alt="fes aragon imagen">
+            </div>
+        </div>
+    </footer>
+
+    <script src="../app.js"></script>
+
+</body>
+</html>

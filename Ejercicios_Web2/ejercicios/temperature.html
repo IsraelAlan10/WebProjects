@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../normalize.css">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet">
+        <title>Ejercicios Prácticost</title>
+    </head>
+<body>
+
+    <header class="header">
+        <div class="container nav">
+            <div class="bar">
+                <a class="logo-a" href="../index.html">
+                    <img class="img-logo" src="../img/unam_og.png" alt="imagen-logo">
+                    <h1 class="logo">UNAM</h1>
+                </a>
+                <div class="navegacion">
+                    <a class="navegacion-enlace" href="../index.html">Inicio</a>
+                    <a class="navegacion-enlace" href="../ejercicios.html">Ejercicios</a>
+                    <a class="navegacion-enlace" href="../creditos.html">Creditos</a>
+                    <!-- <a class="navegacion-enlace" href="#"></a> -->
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-menu">
+        <h1 class="head-form mr-top">Convertir Temperatura</h1>
+        
+        <label class="form-label" for="temperatureInput">Temperatura en grados Celsius:</label>
+        <input class="input-convert" type="number" id="temperatureInput">
+        
+        <div class="btn-convert">
+            <button class="btn-convert-each" onclick="convertToFar()">Convertir a Fahrenheit</button>
+            <button class="btn-convert-each" onclick="convertToKelvin()">Convertir a Kelvin</button>
+
+        </div>
+        
+        <p class="resultado" id="result"></p>
+
+    </main>
+
+
+<script>
+    function convertToFar() {
+        var celsius = parseFloat(document.getElementById('temperatureInput').value);
+        var fahrenheit = (celsius * 9/5) + 32;
+        document.getElementById('result').innerHTML = celsius + ' °C son ' + fahrenheit + ' °F.';
+    }
+
+    function convertToKelvin() {
+        var celsius = parseFloat(document.getElementById('temperatureInput').value);
+        var kelvin = celsius + 273.15;
+        document.getElementById('result').innerHTML = celsius + ' °C son ' + kelvin + ' K.';
+    }
+</script>
+
+</body>
+</html>

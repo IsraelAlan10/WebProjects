@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../normalize.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet">
+    <title>Ejercicios Prácticost</title>
+</head>
+<body id="ej2" class="body">
+    <header class="header">
+        <div class="container nav">
+            <div class="bar">
+                <a class="logo-a" href="../index.html">
+                    <img class="img-logo" src="../img/unam_og.png" alt="imagen-logo">
+                    <h1 class="logo">UNAM</h1>
+                </a>
+                <div class="navegacion">
+                    <a class="navegacion-enlace" href="../index.html">Inicio</a>
+                    <a class="navegacion-enlace" href="../ejercicios.html">Ejercicios</a>
+                    <a class="navegacion-enlace" href="../creditos.html">Creditos</a>
+                    <!-- <a class="navegacion-enlace" href="#"></a> -->
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- <h1 class="section-header-encabezado">Lista de ejercicios</h1> -->
+
+        <form id="formulario" class="container">
+            <fieldset class="formulario">
+                <h3 class="head-form">Facturacion de Paciente</h3>
+                   
+                    <label class="form-label">Nombre: </label>
+                    <input id="nombre" type="text" class="input" placeholder="Ingrese su nombre">
+                
+                    <label class="form-label">Costo de la consulta: </label>
+                    <input id="costo" type="number" class="input" placeholder="Costo de la Consulta">
+       
+                    <label class="form-label">Costo de Hospitalización por día: </label>
+                    <input id="costo-hospitalizacion" type="number" class="input" placeholder="Costo de Hospitalización">
+                    
+                    <label class="form-label">Numero de días en hospitalización: </label>
+                    <input id="num-dias-hospital" type="number" class="input" placeholder="Dias en hospitalización">
+                
+                    <label class="form-label">Costos Varios: </label>
+                    <input id="costo-varios" type="number" class="input" placeholder="Costos Varios">
+                    
+                    <label class="form-label">Costos de Medicamentos: </label>
+                    <input id="costo-medicamentos" type="number" class="input" placeholder="Costos de Medicamentos">
+                    
+                    <label class="form-label">Deducciones: </label>
+                    <input id="deducciones" type="number" class="input" placeholder="Deducciones">
+                   
+                </div>
+
+                <button class="btn btn-form" type="submit">Calcular Factura</button>
+            </fieldset>
+        </form>
+
+        <h1 class="section-header-encabezado">Resultado</h1>
+
+        <div class="resultado" id="insertar">
+            
+        </div>
+
+        <ul class="padre" id="insertar2">
+                
+        </ul>
+
+        <div class="resultado" id="insertar3">
+
+        </div>
+
+
+        <div class="resultado" id="insertar4">
+
+        </div>
+
+        <div class="resultado" id="insertar5">
+
+        </div>
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="container nav">
+            <div class="bar">
+                <a href="#">
+                    <h2 class="logo">FES ARAGÓN</h1>
+                </a>
+                
+                <div class="footer-txt">
+                    <p class="footer-text">Trabajo Práctico. Programación Web 2</p>
+                    <p class="footer-text">Alan Israel Montero Herrera</p>
+                </div>
+                <img class="img-logo-fes" src="../img/fes_aragon.png"alt="fes aragon imagen">
+            </div>
+        </div>
+    </footer>
+    <script src="../all_js/ejercicios.js"></script>
+</body>
+</html>

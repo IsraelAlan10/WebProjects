@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../normalize.css">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet">
+        <title>Ejercicios Prácticost</title>
+    </head>
+<body>
+
+    <header class="header">
+        <div class="container nav">
+            <div class="bar">
+                <a class="logo-a" href="../index.html">
+                    <img class="img-logo" src="../img/unam_og.png" alt="imagen-logo">
+                    <h1 class="logo">UNAM</h1>
+                </a>
+                <div class="navegacion">
+                    <a class="navegacion-enlace" href="../index.html">Inicio</a>
+                    <a class="navegacion-enlace" href="../ejercicios.html">Ejercicios</a>
+                    <a class="navegacion-enlace" href="../creditos.html">Creditos</a>
+                    <!-- <a class="navegacion-enlace" href="#"></a> -->
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container-menu">
+        <h1 class="head-form mr-top">Seleccione el tipo de conversión:</h1>
+        
+        <select class="select-convert" id="conversionSelector" onchange="navigateToConversionPage()">
+            <option value="" disabled selected>Seleccione una opción</option>
+            <option value="time">Tiempo</option>
+            <option value="temperature">Temperatura</option>
+            <option value="peso">Peso</option>
+        </select>
+        
+    </main>
+
+<script>
+    function navigateToConversionPage() {
+        var selectedOption = document.getElementById('conversionSelector').value;
+        if (selectedOption) {
+            window.location.href = selectedOption + '.html';
+        }
+    }
+</script>
+
+</body>
+</html>

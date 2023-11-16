@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../normalize.css">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet">
+        <title>Ejercicios Prácticost</title>
+    </head>
+<body>
+
+    <header class="header">
+        <div class="container nav">
+            <div class="bar">
+                <a class="logo-a" href="../index.html">
+                    <img class="img-logo" src="../img/unam_og.png" alt="imagen-logo">
+                    <h1 class="logo">UNAM</h1>
+                </a>
+                <div class="navegacion">
+                    <a class="navegacion-enlace" href="../index.html">Inicio</a>
+                    <a class="navegacion-enlace" href="../ejercicios.html">Ejercicios</a>
+                    <a class="navegacion-enlace" href="../creditos.html">Creditos</a>
+                    <!-- <a class="navegacion-enlace" href="#"></a> -->
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <h3 class="head-form mr-top">Imagenes con onmousedown y onmouseup</h3>
+
+    <div class="container flex">
+        <img id="1" class="selectionImage" src="../img/torre-eiffel.jpg" alt="Opción 1" onmousedown="changeImage('../img/torre-eiffel-cke.jpg', 1)" onmouseup="restoreImage('../img/torre-eiffel.jpg', 1)">
+        <img id="2" class="selectionImage" src="../img/espacio1.jpg" alt="Opción 2" onmousedown="changeImage('../img/espacio2.jpg', 2)" onmouseup="restoreImage('../img/espacio1.jpg', 2)">
+        <img id="3" class="selectionImage" src="../img/selva1.jpg" alt="Opción 3" onmousedown="changeImage('../img/selva2.jpg', 3)" onmouseup="restoreImage('../img/selva1.jpg', 3)">
+        <img id="4" class="selectionImage" src="../img/mar1.jpg" alt="Opción 4" onmousedown="changeImage('../img/mar2.jpg', 4)" onmouseup="restoreImage('../img/mar1.jpg', 4)">
+    </div>
+
+    <footer class="footer">
+        <div class="container nav">
+            <div class="bar">
+                <a href="#">
+                    <h2 class="logo">FES ARAGÓN</h1>
+                </a>
+                
+                <div class="footer-txt">
+                    <p class="footer-text">Trabajo Práctico. Programación Web 2</p>
+                    <p class="footer-text">Alan Israel Montero Herrera</p>
+                </div>
+                <img class="img-logo-fes" src="../img/fes_aragon.png"alt="fes aragon imagen">
+            </div>
+        </div>
+    </footer>
+
+<script>
+    var originalImage = document.getElementById('mainImage').src;
+
+    function changeImage(newSrc, id) {
+        document.getElementById(id).src = newSrc;
+        document.getElementById(id).style.transform = 'scale(1.1)';
+    }
+
+    function restoreImage(newSrc, id) {
+        document.getElementById(id).src = newSrc;
+        document.getElementById(id).style.transform = 'scale(1)';
+    }
+</script>
+
+</body>
+</html>

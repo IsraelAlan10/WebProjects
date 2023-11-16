@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../normalize.css">
+        <link rel="stylesheet" href="../style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=Playfair+Display:wght@400;600&family=Poppins:ital,wght@1,300&display=swap" rel="stylesheet">
+        <title>Ejercicios Prácticost</title>
+    </head>
+<body>
+
+    <header class="header">
+        <div class="container nav">
+            <div class="bar">
+                <a class="logo-a" href="../index.html">
+                    <img class="img-logo" src="../img/unam_og.png" alt="imagen-logo">
+                    <h1 class="logo">UNAM</h1>
+                </a>
+                <div class="navegacion">
+                    <a class="navegacion-enlace" href="../index.html">Inicio</a>
+                    <a class="navegacion-enlace" href="../ejercicios.html">Ejercicios</a>
+                    <a class="navegacion-enlace" href="../creditos.html">Creditos</a>
+                    <!-- <a class="navegacion-enlace" href="#"></a> -->
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- <main class="container-menu"> -->
+
+        
+
+        <main class="container-menu">
+
+            <h1 class="head-form mr-top">Calculadora de figuras</h1>
+        
+
+            <div class="figure-container">
+                <!-- Figura 1: Cuadrado -->
+                <div class="figure">
+                    <h3 class="form-label">Cuadrado</h3>
+                    <img id="1" src="../img/cuadrado.png" alt="Cuadrado">
+                    <p class="formula">Fórmula: Área = lado * lado<br>Perímetro = 4 * lado</p>
+
+                </div>
+                <form class="form">
+                    <label class="form-label" for="sideLength">Longitud del lado:</label>
+                    <input class="input" type="number" id="sideLength" name="sideLength" required>
+                
+                    <button class="selectableText" type="button" onclick="calculateArea()">Calcular Área</button>
+                
+                    <p class="resultado" id="result"></p>
+                </form>
+        
+                <!-- Figura 2: Triángulo -->
+                <div class="figure">
+                    <h3 class="form-label">Triangulo</h3>
+                    <img id="2" src="../img/triangulo.png" alt="Triángulo">
+                    <p class="formula">Fórmula: Área = (base * altura) / 2<br>Perímetro = lado1 + lado2 + lado3</p>
+                </div>
+
+                <form class="form">
+                    <label class="form-label" for="base">Base:</label>
+                    <input class="input" type="number" id="base" name="base" required>
+
+                    <label class="form-label" for="height">Altura:</label>
+                    <input class="input" type="number" id="height" name="height" required>
+                
+                    <button class="selectableText" type="button" onclick="calculateAreaTriangulo()">Calcular Área</button>
+                
+                    <p class="resultado" id="resultTriangulo"></p>
+                </form>
+
+                
+                <!-- Figura 3: Círculo -->
+                <div class="figure">
+                    <h3 class="form-label">Circulo</h3>
+                    <img id="3" src="../img/circulo.png" alt="Círculo">
+                    <p class="formula">Fórmula: Área = π * radio^2<br>Perímetro = 2 * π * radio</p>
+                </div>
+
+                <form class="form" id="circleForm">
+                    <label class="form-label" for="radius">Radio:</label>
+                    <input class="input" type="number" id="radius" name="radius" required>
+                
+                    <button class="selectableText" type="button" onclick="calculateAreaCirculo()">Calcular Área</button>
+                
+                    <p class="resultado" id="resultCirculo"></p>
+                </form>
+        
+                <!-- Figura 4: Rectángulo -->
+                <div class="figure">
+                    <h3 class="form-label">Rectangulo</h3>
+                    <img id="4" src="../img/rectangulo.png" alt="Rectángulo">
+                    <p class="formula">Fórmula: Área = base * altura<br>Perímetro = 2 * (base + altura)</p>
+                </div>
+
+                <form class="form" id="rectangleForm">
+                    <label class="form-label" for="length">Longitud:</label>
+                    <input class="input" type="number" id="length" name="length" required>
+                
+                    <label class="form-label" for="width">Ancho:</label>
+                    <input class="input" type="number" id="width" name="width" required>
+                
+                    <button class="selectableText" type="button" onclick="calculateAreaRect()">Calcular Área</button>
+                
+                    <p class="resultado" id="resultRect"></p>
+                </form>
+        
+                <!-- Figura 5: Esfera -->
+                <div class="figure">
+                    <h3 class="form-label">Esfera</h3>
+                    <img id="5" src="../img/esfera.png" alt="Esfera">
+                    <p class="formula">Fórmula: Volumen = (4/3) * π * radio^3</p>
+                </div>
+
+                <form class="form" id="sphereForm">
+                    <label class="form-label" for="radius">Radio:</label>
+                    <input class="input" type="number" id="radius" name="radius" required>
+                
+                    <button class="selectableText" type="button" onclick="calculateVolume()">Calcular Volumen</button>
+                
+                    <p class="resultado" id="resultEsfera"></p>
+                </form>
+            </div>
+        </main>
+    
+    <!-- </main> -->
+
+    <script>
+        function calculateArea() {
+            var sideLength = document.getElementById('sideLength').value;
+            
+            if (!sideLength || sideLength <= 0) {
+                alert('Ingrese un valor válido para la longitud del lado.');
+                return;
+            }
+    
+            var area = sideLength * sideLength;
+            document.getElementById('result').innerHTML = 'El área del cuadrado es: ' + area;
+        }
+        function calculateAreaTriangulo() {
+        var base = document.getElementById('base').value;
+        var height = document.getElementById('height').value;
+        
+        if (!base || base <= 0 || !height || height <= 0) {
+            alert('Ingrese valores válidos para la base y la altura.');
+            return;
+        }
+
+        var area = 0.5 * base * height;
+        document.getElementById('resultTriangulo').innerHTML = 'El área del triángulo es: ' + area;
+        }
+
+        function calculateAreaCirculo() {
+        var radius = document.getElementById('radius').value;
+        
+        if (!radius || radius <= 0) {
+            alert('Ingrese un valor válido para el radio.');
+            return;
+        }
+
+        var area = Math.PI * radius * radius;
+        document.getElementById('resultCirculo').innerHTML = 'El área del círculo es: ' + area.toFixed(2);
+        }
+        function calculateAreaRect() {
+        var length = document.getElementById('length').value;
+        var width = document.getElementById('width').value;
+        
+        if (!length || length <= 0 || !width || width <= 0) {
+            alert('Ingrese valores válidos para la longitud y el ancho.');
+            return;
+        }
+
+        var area = length * width;
+        document.getElementById('resultRect').innerHTML = 'El área del rectángulo es: ' + area;
+    }
+    function calculateVolume() {
+        var radius = document.getElementById('radius').value;
+        
+        if (!radius || radius <= 0) {
+            alert('Ingrese un valor válido para el radio.');
+            return;
+        }
+
+        var volume = (4/3) * Math.PI * Math.pow(radius, 3);
+        document.getElementById('resultEsfera').innerHTML = 'El volumen de la esfera es: ' + volume.toFixed(2);
+    }
+    </script>
+
+</body>
+</html>
